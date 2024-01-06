@@ -1,9 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <string>
-#include <sstream>
-
+#include<bits/stdc++.h>
 using namespace std;
 
 class Task {
@@ -38,7 +33,12 @@ public:
 			tasks[index].completed = true;
 		}
 	}
-	
+
+    void sortByTitle(){
+        sort(tasks.begin(), tasks.end(), [](const Task &a, const Task
+        &b){return a.title < b.title;});
+
+    }	
 
 	void listTasks() {
 		int index = 0;
@@ -92,6 +92,9 @@ int main() {
 		case 4:
 			obj.listTasks();
 			break;
+        case 5:
+            cout<<"Sorting by Title:\n";
+            obj.sortByTitle();;
 		
 		default:
 			std::cout << "Invalid choice. Please try again.\n";
